@@ -1,14 +1,14 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
-  <div>
-    not found
-  </div>
+  <p>404</p>
 </template>
+
+<style scoped>
+p {
+  color: var(--prism-foreground);
+}
+</style>
 
 <route lang="yaml">
 meta:
-  layout: 404
+  layout: home
 </route>

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 const router = useRouter()
@@ -10,7 +10,7 @@ const go = () => {
     router.push(`/hi/${encodeURIComponent(name.value)}`)
 }
 
-</script>
+</script> -->
 
 <template>
   <div class="index-page">
@@ -59,6 +59,18 @@ const go = () => {
     </div>
   </div>
 </template>
+
+<style>
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+h1 {
+  color: var(--prism-foreground);
+}
+</style>
 
 <route lang="yaml">
 meta:
