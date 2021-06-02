@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+const router = useRouter()
+
 
 const name = ref('')
-
-const router = useRouter()
 const go = () => {
   if (name.value)
     router.push(`/hi/${encodeURIComponent(name.value)}`)
@@ -13,41 +13,49 @@ const go = () => {
 </script>
 
 <template>
-  <div>
-    <p class="text-4xl">
-      <carbon-campsite class="inline-block" />
-    </p>
-    <p>
-      <a rel="noreferrer" href="https://github.com/antfu/vitesse" target="_blank">
-        Vitesse
-      </a>
-    </p>
-    <p>
-      <em class="text-sm opacity-75">aaaaaa</em>
-    </p>
+  <div class="index-page">
+    <div class="site-detail">
+      <header class="head">
+        <h1 class="logo"></h1>
+        <ul class="menu">
+          <li>
+            <a href="#">简历列表</a>
+          </li>
+          <li>
+            <a href="#">使用帮助</a>
+          </li>
+        </ul>
+      </header>
 
-    <div class="py-4" />
+      <section class="detail-txt">
+        <div class="inner">
 
-    <input
-      id="input"
-      v-model="name"
-      placeholder="输入你的名字"
-      type="text"
-      autocomplete="false"
-      class="px-4 py-2 text-sm text-center bg-transparent border border-gray-200 rounded outline-none active:outline-none dark:border-gray-700"
-      style="width: 250px"
-      @keydown.enter="go"
-    >
-    <label class="hidden" for="input">输入你的名字</label>
+        <h2>授人以鱼<br>不如授人以渔</h2>
+        <p>授人以鱼不如授人以渔，说的是传授给人既有知识，不如传授给人学习知识的方法。道理其实很简单，鱼是做事目的，捕鱼是做事的手段，一条鱼能解一时之饥，却不能解长久之饥，如果想永远有鱼吃，那就要真正学会捕鱼的方法。</p>
+        <span class="btn">
+          开始制作简历
+        </span>
+        </div>
+      </section>
 
-    <div>
-      <button
-        class="m-3 text-sm btn"
-        :disabled="!name"
-        @click="go"
-      >
-       GO
-      </button>
+      <div class="footer">
+        &copy; copyright 2021 magic·cv
+      </div>
+    </div>
+    <div class="view-box">
+      <div class="tpl-view">
+
+        <div class="box">
+          <img src="../images/cvtpl.png">
+        </div>
+
+        <div class="point">
+          <div class="p p1"></div>
+          <div class="p p2"></div>
+          <div class="p p3"></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </template>
